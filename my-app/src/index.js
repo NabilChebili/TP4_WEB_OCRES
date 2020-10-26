@@ -52,12 +52,15 @@ class Post extends React.Component{
     }
    
     refresh(){
-        this.state.items = new Array();
+        var itemNouv = [];
         for (let i = 0; i < this.props.value.length; i++) {
-            this.state.items.push(<p>{this.props.value[i].contenu} </p>) 
-            this.state.items.push( <button type="button" onClick={() => this.handleClick(i)} class="btn btn-outline-primary">Like 👍</button>)
-            this.state.items.push( <p>{this.props.value[i].like}</p>)
+            itemNouv.push(<p>{this.props.value[i].contenu} </p>) 
+            itemNouv.push( <button type="button" onClick={() => this.handleClick(i)} class="btn btn-outline-primary">Like 👍</button>)
+            itemNouv.push( <p>{this.props.value[i].like}</p>)
         }
+        this.setState({
+            items: itemNouv,
+        });
     }
 
 
@@ -68,7 +71,12 @@ class Post extends React.Component{
     }
 
     render(){
-        this.refresh();
+        this.state.items = new Array();
+        for (let i = 0; i < this.props.value.length; i++) {
+            this.state.items.push(<p>{this.props.value[i].contenu} </p>) 
+            this.state.items.push( <button type="button" onClick={() => this.handleClick(i)} class="btn btn-outline-primary">Like 👍</button>)
+            this.state.items.push( <p>{this.props.value[i].like}</p>)
+        }
         return (            
             <div class="post">
                 <h2>Posts</h2>
