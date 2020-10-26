@@ -1,0 +1,26 @@
+
+ .titre{
+     margin-top: 40px;
+ }
+
+ .row{
+    margin-bottom: 40px;
+}
+.post{
+    margin-top: 40px;
+}
+
+.carte{
+    width: 500px;
+    margin: auto;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid;
+    border-color: dodgerblue;
+}
+
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
